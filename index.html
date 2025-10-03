@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yodo - Split Bills Effortlessly</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.7;
+            color: #1a1a1a;
+            background: #ffffff;
+        }
+
+        header {
+            padding: 2rem 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        nav {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 3rem;
+        }
+
+        nav a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.2s;
+            font-weight: 400;
+            cursor: pointer;
+        }
+
+        nav a:hover {
+            color: #10B981;
+        }
+
+        .hero {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 8rem 2rem 6rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #1a1a1a;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #666;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+
+        .content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin: 3rem 0 1rem;
+            font-weight: 500;
+            color: #1a1a1a;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            color: #666;
+            font-size: 1.05rem;
+        }
+
+        strong {
+            color: #1a1a1a;
+            font-weight: 500;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 4rem;
+            margin: 4rem 0;
+        }
+
+        .feature {
+            text-align: left;
+        }
+
+        .feature h3 {
+            margin: 0 0 0.75rem;
+            font-size: 1.25rem;
+        }
+
+        .feature p {
+            color: #666;
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .contact-form {
+            margin: 3rem 0;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #1a1a1a;
+            font-weight: 400;
+            font-size: 0.95rem;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.875rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.2s;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #10B981;
+        }
+
+        textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        button {
+            background: #10B981;
+            color: white;
+            padding: 0.875rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-weight: 500;
+        }
+
+        button:hover {
+            background: #059669;
+        }
+
+        .privacy-section {
+            margin: 2.5rem 0;
+        }
+
+        ul {
+            margin: 1rem 0 1rem 1.5rem;
+            color: #666;
+        }
+
+        ul li {
+            margin-bottom: 0.5rem;
+            padding-left: 0.5rem;
+        }
+
+        footer {
+            border-top: 1px solid #f0f0f0;
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 6rem;
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        a {
+            color: #10B981;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 4rem 2rem 3rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            nav ul {
+                gap: 1.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Yodo</div>
+            <ul>
+                <li><a href="#home" data-page="home">Home</a></li>
+                <li><a href="#support" data-page="support">Support</a></li>
+                <li><a href="#privacy" data-page="privacy">Privacy</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Page -->
+    <div id="home-page">
+        <section class="hero">
+            <h1>Split bills effortlessly</h1>
+            <p>Track group expenses in one place</p>
+        </section>
+
+        <div class="container">
+            <div class="features">
+                <div class="feature">
+                    <h3>Scan receipts</h3>
+                    <p>Automatically extract items and prices from any bill</p>
+                </div>
+                <div class="feature">
+                    <h3>Split easily</h3>
+                    <p>Assign items to people with a simple tap</p>
+                </div>
+                <div class="feature">
+                    <h3>Settle instantly</h3>
+                    <p>Generate payment links and QR codes</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Support Page -->
+    <div id="support-page" class="hidden">
+        <div class="container">
+            <div class="content">
+                <h2>Support</h2>
+                
+                <h3>Getting started</h3>
+                <p><strong>Scan your bill</strong> — Take a photo of your receipt. Yodo automatically extracts all items and prices.</p>
+                <p><strong>Add people</strong> — Add everyone who's sharing the bill.</p>
+                <p><strong>Assign items</strong> — Tap names to assign items. Split individual items between multiple people if needed.</p>
+                <p><strong>Settle up</strong> — Generate a payment link or QR code for instant payment.</p>
+
+                <h3>Common questions</h3>
+                
+                <p><strong>How does scanning work?</strong><br>
+                Yodo uses OCR technology to read receipts and identify items with their prices.</p>
+
+                <p><strong>Can I split one item between people?</strong><br>
+                Yes. Select multiple people when assigning an item to split it equally between them.</p>
+
+                <p><strong>How do payments work?</strong><br>
+                After splitting, generate a payment link or QR code that works with your banking app.</p>
+
+                <p><strong>Is my data secure?</strong><br>
+                Yes. Read our <a href="#privacy" data-page="privacy">Privacy Policy</a> for details.</p>
+
+                <h3>Contact</h3>
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" required></textarea>
+                        </div>
+                        <button type="submit">Send message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy Page -->
+    <div id="privacy-page" class="hidden">
+        <div class="container">
+            <div class="content">
+                <h2>Privacy Policy</h2>
+                <p><em>Last updated: 3 October 2025</em></p>
+
+                <p>Welcome to Yodo! This Privacy Policy explains how we collect, use, and share information when you use our mobile application, Yodo (the "Service").</p>
+
+                <p>Your privacy is important to us. By using our Service, you agree to the collection and use of information in accordance with this policy.</p>
+
+                <div class="privacy-section">
+                    <h3>1. Information we collect</h3>
+                    <p>To provide and improve our Service, we collect the following types of information:</p>
+                    
+                    <p><strong>A. Information you provide directly:</strong></p>
+                    <ul>
+                        <li><strong>Bill Information:</strong> When you scan or create a bill, we collect all data from the receipt, including the merchant's name, date, items purchased, prices, taxes, and totals. We also collect any additional information you provide, such as notes or tip amounts.</li>
+                        <li><strong>Participant Information:</strong> We collect the names or nicknames you assign to people for the purpose of splitting a bill.</li>
+                        <li><strong>Payment Information:</strong> To generate a payment link or QR code, we collect the IBAN (International Bank Account Number) of the person who paid the bill. This information is provided voluntarily by you and is used solely for this purpose.</li>
+                    </ul>
+
+                    <p><strong>B. Information collected automatically:</strong></p>
+                    <ul>
+                        <li><strong>Usage and Analytics Data:</strong> We use Amplitude, a third-party analytics service, to understand how you interact with our Service. Amplitude collects pseudonymized data about your activity, such as features used, button taps, and session duration. This data is associated with a random identifier and is not linked to your name, IBAN, or other directly identifiable personal information. We use this data to improve app functionality and user experience.</li>
+                        <li><strong>Receipt Images:</strong> When you use the scanning feature, the image of the receipt is processed to extract the text data.</li>
+                    </ul>
+
+                    <p><strong>C. Information from your device:</strong></p>
+                    <ul>
+                        <li><strong>Camera Access:</strong> The Service requests permission to access your device's camera. This is required to scan receipts. We only access your camera when you are actively using the scanning feature.</li>
+                    </ul>
+                </div>
+
+                <div class="privacy-section">
+                    <h3>2. How we use your information</h3>
+                    <p>We use the information we collect to:</p>
+                    <ul>
+                        <li><strong>Provide and Maintain the Service:</strong> To perform the core functions of the app, such as extracting items from receipts, splitting bills, and calculating totals.</li>
+                        <li><strong>Facilitate Payments:</strong> To generate payment QR codes and links using the IBAN you provide, making it easy for others to pay you back.</li>
+                        <li><strong>Improve Our App:</strong> To analyze usage trends, diagnose technical issues, and develop new features.</li>
+                        <li><strong>Communicate with You:</strong> To respond to your support requests or inquiries.</li>
+                    </ul>
+                </div>
+
+                <div class="privacy-section">
+                    <h3>3. How we share your information</h3>
+                    <p>We do not sell your personal information. We may share your information only in the following limited circumstances:</p>
+                    <ul>
+                        <li><strong>With Service Providers:</strong> We share information with third-party vendors who perform services on our behalf. This includes Amplitude for product analytics, and cloud hosting providers for securely storing your bill data, including receipt images. These providers are obligated to protect your data and are restricted from using it for any other purpose.</li>
+                        <li><strong>For Legal Reasons:</strong> We may disclose your information if required by law or in response to valid requests by public authorities (e.g., a court or government agency).</li>
+                    </ul>
+                </div>
+
+                <div class="privacy-section">
+                    <h3>4. Data storage and security</h3>
+                    <p>The security of your data is a priority. Your data is stored securely on your device and on our cloud servers. We implement industry-standard technical and organizational security measures to protect your information, especially sensitive data like IBANs, from unauthorized access, use, or disclosure. However, no method of transmission over the internet is 100% secure, and we cannot guarantee its absolute security.</p>
+                </div>
+
+                <div class="privacy-section">
+                    <h3>5. Your rights and choices</h3>
+                    <p>You have control over your information. You can:</p>
+                    <ul>
+                        <li><strong>Access and Edit Information:</strong> You can view and edit the names of participants and bill details within the app.</li>
+                        <li><strong>Delete Information:</strong> You can delete individual bills at any time using the trash icon in the app.</li>
+                        <li><strong>Revoke Permissions:</strong> You can revoke camera permissions for the app through your device's settings, though this will disable the receipt scanning feature.</li>
+                        <li><strong>Data Deletion Request:</strong> To request the complete deletion of all your data from our servers, please contact us at the email address below.</li>
+                    </ul>
+                </div>
+
+                <div class="privacy-section">
+                    <h3>6. Children's privacy</h3>
+                    <p>Our Service is not intended for use by children under the age of 4. We do not knowingly collect personally identifiable information from children under 4. If we become aware that we have collected such information, we will take steps to delete it promptly.</p>
+                </div>
+
+                <div class="privacy-section">
+                    <h3>7. Changes to this privacy policy</h3>
+                    <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy within the app and updating the "Last Updated" date. You are advised to review this Privacy Policy periodically for any changes.</p>
+                </div>
+
+                <div class="privacy-section">
+                    <h3>8. Contact us</h3>
+                    <p>If you have any questions about this Privacy Policy, please contact us at:<br>
+                    <a href="mailto:igor.chodelka@gmail.com">igor.chodelka(at)gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Yodo. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showPage(pageName) {
+            const pages = ['home', 'support', 'privacy'];
+            pages.forEach(page => {
+                const element = document.getElementById(page + '-page');
+                if (page === pageName) {
+                    element.classList.remove('hidden');
+                } else {
+                    element.classList.add('hidden');
+                }
+            });
+            window.scrollTo(0, 0);
+        }
+
+        // Handle navigation clicks
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('nav a, a[data-page]');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const page = this.getAttribute('data-page');
+                    if (page) {
+                        showPage(page);
+                    }
+                });
+            });
+
+            // Handle contact form
+            document.getElementById('contact-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message. We\'ll get back to you soon.');
+                this.reset();
+            });
+        });
+    </script>
+</body>
+</html>
