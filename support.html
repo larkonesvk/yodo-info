@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yodo - Split Bills Effortlessly</title>
+    <title>Yodo - Support</title>
     <style>
         /* All your CSS styles go here (copied from the original file) */
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -64,24 +64,47 @@
     </header>
 
     <main>
-        <section class="hero">
-            <h1>Split bills effortlessly</h1>
-            <p>Track group expenses in one place</p>
-        </section>
-
         <div class="container">
-            <div class="features">
-                <div class="feature">
-                    <h3>Scan receipts</h3>
-                    <p>Automatically extract items and prices from any bill</p>
-                </div>
-                <div class="feature">
-                    <h3>Split easily</h3>
-                    <p>Assign items to people with a simple tap</p>
-                </div>
-                <div class="feature">
-                    <h3>Settle instantly</h3>
-                    <p>Generate payment links and QR codes</p>
+            <div class="content">
+                <h2>Support</h2>
+                
+                <h3>Getting started</h3>
+                <p><strong>Scan your bill</strong> — Take a photo of your receipt. Yodo automatically extracts all items and prices.</p>
+                <p><strong>Add people</strong> — Add everyone who's sharing the bill.</p>
+                <p><strong>Assign items</strong> — Tap names to assign items. Split individual items between multiple people if needed.</p>
+                <p><strong>Settle up</strong> — Generate a payment link or QR code for instant payment.</p>
+
+                <h3>Common questions</h3>
+                
+                <p><strong>How does scanning work?</strong><br>
+                Yodo uses OCR technology to read receipts and identify items with their prices.</p>
+
+                <p><strong>Can I split one item between people?</strong><br>
+                Yes. Select multiple people when assigning an item to split it equally between them.</p>
+
+                <p><strong>How do payments work?</strong><br>
+                After splitting, generate a payment link or QR code that works with your banking app.</p>
+
+                <p><strong>Is my data secure?</strong><br>
+                Yes. Read our <a href="privacy.html">Privacy Policy</a> for details.</p>
+
+                <h3>Contact</h3>
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" required></textarea>
+                        </div>
+                        <button type="submit">Send message</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -90,5 +113,14 @@
     <footer>
         <p>© 2025 Yodo. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Handle contact form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message. We\'ll get back to you soon.');
+            this.reset();
+        });
+    </script>
 </body>
 </html>
