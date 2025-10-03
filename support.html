@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yodo - Support</title>
+    <style>
+        /* All your CSS styles go here (copied from the original file) */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; line-height: 1.7; color: #1a1a1a; background: #ffffff; }
+        header { padding: 2rem 0; border-bottom: 1px solid #f0f0f0; }
+        nav { max-width: 1100px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.75rem; font-weight: 600; color: #1a1a1a; }
+        nav ul { list-style: none; display: flex; gap: 3rem; }
+        nav a { color: #666; text-decoration: none; transition: color 0.2s; font-weight: 400; }
+        nav a:hover { color: #10B981; }
+        .hero { max-width: 800px; margin: 0 auto; padding: 8rem 2rem 6rem; text-align: center; }
+        .hero h1 { font-size: 3.5rem; font-weight: 600; margin-bottom: 1.5rem; color: #1a1a1a; line-height: 1.2; }
+        .hero p { font-size: 1.25rem; color: #666; font-weight: 300; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 6rem 2rem; }
+        .content { max-width: 700px; margin: 0 auto; }
+        h2 { font-size: 2.5rem; margin-bottom: 3rem; font-weight: 600; color: #1a1a1a; }
+        h3 { font-size: 1.5rem; margin: 3rem 0 1rem; font-weight: 500; color: #1a1a1a; }
+        p { margin-bottom: 1.5rem; color: #666; font-size: 1.05rem; }
+        strong { color: #1a1a1a; font-weight: 500; }
+        .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4rem; margin: 4rem 0; }
+        .feature { text-align: left; }
+        .feature h3 { margin: 0 0 0.75rem; font-size: 1.25rem; }
+        .feature p { color: #666; margin: 0; font-size: 1rem; }
+        .contact-form { margin: 3rem 0; }
+        .form-group { margin-bottom: 1.5rem; }
+        label { display: block; margin-bottom: 0.5rem; color: #1a1a1a; font-weight: 400; font-size: 0.95rem; }
+        input, textarea { width: 100%; padding: 0.875rem; border: 1px solid #e0e0e0; border-radius: 8px; font-size: 1rem; font-family: inherit; transition: border-color 0.2s; }
+        input:focus, textarea:focus { outline: none; border-color: #10B981; }
+        textarea { min-height: 140px; resize: vertical; }
+        button { background: #10B981; color: white; padding: 0.875rem 2rem; border: none; border-radius: 8px; font-size: 1rem; cursor: pointer; transition: background 0.2s; font-weight: 500; }
+        button:hover { background: #059669; }
+        .privacy-section { margin: 2.5rem 0; }
+        ul { margin: 1rem 0 1rem 1.5rem; color: #666; }
+        ul li { margin-bottom: 0.5rem; padding-left: 0.5rem; }
+        footer { border-top: 1px solid #f0f0f0; text-align: center; padding: 3rem 2rem; margin-top: 6rem; color: #999; font-size: 0.9rem; }
+        a { color: #10B981; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        @media (max-width: 768px) {
+            .hero { padding: 4rem 2rem 3rem; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1.1rem; }
+            .features { grid-template-columns: 1fr; gap: 2.5rem; }
+            nav ul { gap: 1.5rem; }
+            h2 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Yodo</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="content">
+                <h2>Support</h2>
+                
+                <h3>Getting started</h3>
+                <p><strong>Scan your bill</strong> — Take a photo of your receipt. Yodo automatically extracts all items and prices.</p>
+                <p><strong>Add people</strong> — Add everyone who's sharing the bill.</p>
+                <p><strong>Assign items</strong> — Tap names to assign items. Split individual items between multiple people if needed.</p>
+                <p><strong>Settle up</strong> — Generate a payment link or QR code for instant payment.</p>
+
+                <h3>Common questions</h3>
+                
+                <p><strong>How does scanning work?</strong><br>
+                Yodo uses OCR technology to read receipts and identify items with their prices.</p>
+
+                <p><strong>Can I split one item between people?</strong><br>
+                Yes. Select multiple people when assigning an item to split it equally between them.</p>
+
+                <p><strong>How do payments work?</strong><br>
+                After splitting, generate a payment link or QR code that works with your banking app.</p>
+
+                <p><strong>Is my data secure?</strong><br>
+                Yes. Read our <a href="privacy.html">Privacy Policy</a> for details.</p>
+
+                <h3>Contact</h3>
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" required></textarea>
+                        </div>
+                        <button type="submit">Send message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 Yodo. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Handle contact form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message. We\'ll get back to you soon.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
